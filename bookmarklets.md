@@ -6,4 +6,4 @@ The bookmarklets in this repository can help with auditing and testing a web app
 
 - WGAG 2.5.5 Target Size (Enhanced) (Level AAA): [44×44 Cursor, with Esc](https://codepen.io/aardrian/pen/eYZWNyv)
 - WCAG 2.5.8 Target Size (Minimum) (Level AA): [24×24 Cursor](https://codepen.io/aardrian/pen/eYyjNVg)
-- WCAG 2.5.8 Target Size (Minimum) (Level AA): [258-target-size](https://github.com/bworx/bookmarklets-accessibility/blob/main/258-target-size.js)
+- WCAG 2.5.8 Target Size (Minimum) (Level AA): [258-target-size](/bookmarklets/js/258-target-size.js)
