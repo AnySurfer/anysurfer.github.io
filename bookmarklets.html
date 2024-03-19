@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Bookmarklets</title>
+		<meta charset='utf-8'>
+		<style>
+		</style>
+		<script>
+		</script>
+	</head>
+	<body>
+		<h1>Bookmarklets</h1>
+		<p>A bookmarklet is a small piece of (JavaScript) code that runs in the context of the currently visible web page. In order to install one of the bookmarklets, please drag its link to your browser bookmarks and call it from there.</p>
+		<p>The bookmarklets in this repository can help with auditing and testing a web application for accessibility issues.</p>
+		<ul>
+			<li>WCAG 2.5.8 Target Size (Minimum) (Level AA): <a href="javascript:(function(){var style=document.createElement('style');style.innerHTML='.circle-overlay { position: absolute; border-radius: 50%; width: 24px; height: 24px; box-sizing: border-box; pointer-events: none; }';document.head.appendChild(style);var circlePositions=[];function drawCircleAroundElement(element){var rect=element.getBoundingClientRect();var centerX=rect.left+window.scrollX+rect.width/2;var centerY=rect.top+window.scrollY+rect.height/2;var hasIntersection=false;for(var i=0;i<circlePositions.length;i++){var otherCircle=circlePositions[i];var distance=Math.sqrt(Math.pow(centerX-otherCircle.x,2)+Math.pow(centerY-otherCircle.y,2));var minDistance=12+12;if(distance<minDistance){hasIntersection=true;var existingCircle=document.createElement('div');existingCircle.className='circle-overlay';existingCircle.style.border='5px solid red';existingCircle.style.left=otherCircle.x-12+'px';existingCircle.style.top=otherCircle.y-12+'px';document.body.appendChild(existingCircle);break;}}circlePositions.push({x:centerX,y:centerY});var circle=document.createElement('div');circle.className='circle-overlay';if(hasIntersection){circle.style.border='5px solid red';}else{circle.style.border='2px solid green';}circle.style.left=centerX-12+'px';circle.style.top=centerY-12+'px';document.body.appendChild(circle);}var clickableElements=document.querySelectorAll('a, button, [role="button"], [role="link"], [role="checkbox"], [role="radio"], [role="switch"], [role="tab"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [onclick], [onmousedown], [onmouseup], [onkeydown], [onkeyup], [onkeypress], [oncontextmenu], [onselect], [onchange], [oninput], [onfocus], [onblur], [ondblclick], [onwheel], [ondrag], [ondragstart], [ondragend], [ondragover], [ondragenter], [ondragleave], [ondragexit], [ondrop], [ontouchstart], [ontouchend], [ontouchmove], [ontouchcancel], [onsubmit]');clickableElements.forEach(function(element){drawCircleAroundElement(element);})();})();">Target size</a></li>
+		</ul>
+	</body>
+</html>
