@@ -15,9 +15,14 @@
 		<p>Highlight classes of elements on a web page:</p>
 		<ul>
 			<li><a href="javascript:if(window.a11yHeadings)window.a11yHeadings.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://anysurfer.github.io/css/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://anysurfer.github.io/javascript/headings.js';document.getElementsByTagName('head')[0].appendChild(script);})();}">Headings</li>
-			<!-- <li>Landmarks</li>
-			<li>Images</li>
-			<li>Lists</li> -->
+			<li><a href="javascript:if(window.a11yLandmarks)window.a11yLandmarks.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://anysurfer.github.io/css/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://anysurfer.github.io/javascript/landmarks.js';document.getElementsByTagName('head')[0].appendChild(script);})();}"">Landmarks</a></li>
+			<li><a href="javascript:if(window.a11yLists)window.a11yLists.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://anysurfer.github.io/css/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://anysurfer.github.io/javascript/lists.js';document.getElementsByTagName('head')[0].appendChild(script);})();}"">Lists</a></li>
+			<!-- <li><a href="">Images</a></li> -->
+			<li><a href="javascript:(function()%7B%0A%09document.querySelectorAll('*').forEach(function (el) %7B%0A%09%09if (el.nodeName.toLowerCase() %3D%3D%3D 'p') %7B%0A%09%09%09el.style.setProperty('margin-bottom'%2C '2em'%2C 'important')%3B%0A%09%09%7D%0A%09%09el.style.setProperty('line-height'%2C '1.5'%2C 'important')%3B%0A%09%09el.style.setProperty('letter-spacing'%2C '0.12em'%2C 'important')%3B%0A%09%09el.style.setProperty('word-spacing'%2C '0.16em'%2C 'important')%3B%0A%09%7D)%0A%7D)()%3B">Text spacing</li>
+		</ul>
+		<h2>Source</h2>
+		<ul>
+			<li><a href="https://github.com/oaa-tools/bookmarklets">https://github.com/oaa-tools/bookmarklets</a></li>
 		</ul>
 	</body>
 </html>
