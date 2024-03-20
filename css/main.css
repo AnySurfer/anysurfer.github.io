@@ -19,7 +19,7 @@ ul.navigation li a {
   text-decoration: none;
 }
 
-ul.navigation li a:hover:not(.active) {background-color: #111;}
+ul.navigation li a:hover:not(.active) {background-color: #1d4289;}
 
 ul.navigation li a.active {background-color: #1d4289;}
 
