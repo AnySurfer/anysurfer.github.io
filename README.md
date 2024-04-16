@@ -5,6 +5,7 @@ List of tools, extensions and bookmarklets for testing a web application for acc
 - [Bookmarklets](/bookmarklets.html)
 - [Browser Extensions](/browser-extensions.html)
 - [Accessible components](/accessible-components.html)
+- [Tools](/tools.html)
 
 
 Feedback and pull requests are welcome.
