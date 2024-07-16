@@ -7,6 +7,16 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+		<script type="text/javascript">
+		(function(window, document, dataLayerName, id) {
+		window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+		function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}document.cookie=a+"="+b+d+f+"; path=/"}
+		var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+		var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+		tags.async=!0,tags.src="https://anysurfer.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+		!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+		})(window, document, 'dataLayer', '576fc81f-a59d-48bd-a8ea-146f73646335');
+		</script>
 		<header class="header">
 			<a class="logo" href="https://anysurfer.github.io/">anysurfer.github.io</a>
 			<ul class="navigation">
@@ -22,7 +32,6 @@
 				<h1>Bookmarklets</h1>
 				<p>A bookmarklet is a small piece of (JavaScript) code that runs in the context of the currently visible web page. In order to install one of the bookmarklets, please drag its link to your browser bookmarks and call it from there.</p>
 				<p>The bookmarklets in this repository can help with auditing and testing a web application for accessibility issues.</p>
-
 				<ul>
 					<li><a href="javascript:if(window.a11yHeadings)window.a11yHeadings.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://anysurfer.github.io/css/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://anysurfer.github.io/javascript/headings.js';document.getElementsByTagName('head')[0].appendChild(script);})();}">Headings</a></li>
 					<li><a href="javascript:if(window.a11yLandmarks)window.a11yLandmarks.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://anysurfer.github.io/css/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://anysurfer.github.io/javascript/landmarks.js';document.getElementsByTagName('head')[0].appendChild(script);})();}"">Landmarks</a></li>
