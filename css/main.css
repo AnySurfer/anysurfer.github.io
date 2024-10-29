@@ -27,7 +27,8 @@ html {
   background: var(--color-background);
 }
 img {
-  width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 body {
   padding: var(--padding);
@@ -302,12 +303,22 @@ ul.navigation li a:hover:not(.active) {
 ul.navigation li a.active {text-decoration: underline;}
 
 
+.booklist > section {
+    display: grid;
+    grid-template-columns: 10rem auto;
+    margin: 2rem 0 1rem 0;
+}
+.alignleft {
+  float: left;
+  clear: both;
+}
+
+
+
 
 @media screen and (max-width: 600px) {
   ul.navigation li.right, 
   ul.navigation li {float: none;}
-
-
 
 
 .intro {
@@ -500,3 +511,4 @@ div#wcb_p {
     white-space: nowrap;
     border-width: 0;
 }
+
