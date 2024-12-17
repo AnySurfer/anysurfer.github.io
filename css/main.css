@@ -278,29 +278,43 @@ hr {
 .align-center {
   text-align: center;
 }
+
 ul.navigation {
   list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  overflow: hidden;
-  background-color: #fff;
+  margin: 0 0 0 20px;
+  padding: 0;
+  float: right; 
+  background-color: #f1f1f1;
+  border: 1px solid #555;
 }
 
-ul.navigation li {float: left;}
+ul.navigation li {
+  list-style-type: none;
+   border-bottom: 1px solid #555;
+   margin: 0;
+}
 
 ul.navigation li a {
+  font-weight: 600;
   display: block;
   color: #000;
-  text-align: center;
-  padding: 14px 16px;
+  padding: 8px 16px;
   text-decoration: none;
-  font-weight: 600;
 }
 
 ul.navigation li a:hover:not(.active) {
-  background-color: #ffffff;}
+  background-color: #000;
+  color: white;
+}
 
-ul.navigation li a.active {text-decoration: underline;}
+ul.navigation li a.active {
+  background-color: #000;
+  color: white;
+}
+
+ul.navigation  li:last-child {
+  border-bottom: none;
+}
 
 
 .booklist > section {
@@ -314,11 +328,16 @@ ul.navigation li a.active {text-decoration: underline;}
 }
 
 
-
-
 @media screen and (max-width: 600px) {
-  ul.navigation li.right, 
-  ul.navigation li {float: none;}
+  ul.navigation {
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  float: left; 
+  width: 100%;
+  max-width: 100%;
+  }
+}
 
 
 .intro {
