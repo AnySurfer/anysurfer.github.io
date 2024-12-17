@@ -395,17 +395,17 @@ ul.navigation  li:last-child {
 }
 
 .footer {
-  padding: 9rem 0 6rem;
+  padding: 0;
   line-height: 1.5em;
 }
-.footer:before {
+/*.footer:before {
   content: "";
   display: block;
   width: 1.5rem;
   height: 2px;
   background: var(--color-black);
   margin-bottom: 1.5rem;
-}
+}*/
 
 .footer h2 {
   font-weight: 600;
@@ -415,9 +415,9 @@ ul.navigation  li:last-child {
 .footer p {
   color: var(--color-black);
 }
-.footer p {
+/*.footer p {
   max-width: 15rem;
-}
+}*/
 .footer a:hover {
   color: var(--color-text);
 }
