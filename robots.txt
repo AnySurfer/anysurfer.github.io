@@ -1,0 +1,3 @@
+# Block a single folder and all subfolders
+User-agent: *
+Disallow: /temp/
