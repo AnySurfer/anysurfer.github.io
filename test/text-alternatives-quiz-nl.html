@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tekstalternatieven – voel de pijn zelf</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/moon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+
+  <style>
+    /* ── Base font size (moon theme default = 40px; verkleind zodat inhoud past) ── */
+    .reveal { font-size: 26px; }
+
+    /* ── Layout tweaks ── */
+    .reveal .slides { text-align: left; }
+    .reveal h1, .reveal h2 { text-align: center; }
+    .reveal h3 { color: #93e0d5; font-size: 1.1em; text-transform: uppercase; letter-spacing: .08em; }
+    .reveal h4 { color: #f9c74f; font-size: 1em; margin-bottom: .4em; }
+
+    /* ── Code blocks ── */
+    .reveal pre { width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,.5); }
+    .reveal pre code { font-size: .85em; line-height: 1.55; padding: 1.1em 1.3em; border-radius: 6px; }
+
+    /* ── Answer badge ── */
+    .answer-label {
+      display: inline-block;
+      background: #f9c74f;
+      color: #1c1c2e;
+      font-weight: 700;
+      padding: .15em .65em;
+      border-radius: 4px;
+      font-size: .9em;
+      margin-bottom: .45em;
+      letter-spacing: .05em;
+    }
+
+    /* ── Announced box ── */
+    .announced {
+      display: inline-block;
+      background: rgba(147, 224, 213, .15);
+      border: 2px solid #93e0d5;
+      border-radius: 6px;
+      padding: .35em .9em;
+      font-family: monospace;
+      font-size: 1.15em;
+      color: #93e0d5;
+      margin: .4em 0 .6em;
+    }
+    .announced.none { border-color: #ff9090; color: #ff9090; background: rgba(255,144,144,.1); }
+
+    /* ── Tips ── */
+    .tip {
+      background: rgba(249,199,79,.08);
+      border-left: 4px solid #f9c74f;
+      padding: .6em 1em;
+      border-radius: 0 6px 6px 0;
+      font-size: .88em;
+      margin-top: .8em;
+      color: #ddd;
+    }
+    .tip strong { color: #f9c74f; }
+
+    /* ── Rule list ── */
+    .rules ol { padding-left: 1.4em; }
+    .rules li { margin-bottom: .5em; font-size: .95em; }
+
+    /* ── Takeaway list ── */
+    .reveal .takeaways li { margin-bottom: .55em; }
+
+    /* ── Nav hint ── */
+    .nav-hint {
+      font-size: .72em;
+      color: #a8aab8;
+      text-align: center;
+      margin-top: 2em;
+    }
+    .nav-hint kbd {
+      background: #2a3a4a;
+      border: 1px solid #4a5a6a;
+      border-radius: 3px;
+      padding: .1em .35em;
+      font-size: .9em;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: .7em;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #a8aab8;
+      margin-bottom: .3em;
+    }
+
+    /* ── Correct / Wrong pills ── */
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .1em .7em;
+      font-size: .78em;
+      font-weight: 700;
+      margin-left: .5em;
+      vertical-align: middle;
+    }
+    .pill.good  { background: #2d9e6b; color: #fff; }
+    .pill.bad   { background: #c0392b; color: #fff; }
+    .pill.meh   { background: #e67e22; color: #fff; }
+
+    hr.divider { border: none; border-top: 1px solid #334; margin: .9em 0; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════
+     TITEL
+════════════════════════════════════════════ -->
+<section>
+  <br>
+  <h1>Tekstalternatieven</h1>
+  <div style="text-align:center; margin: 1.4em 0 .8em;">
+    <div style="display:inline-block; background:#fff; border-radius:14px; padding:14px 24px;">
+    <svg width="200" height="200" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AnySurfer"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="anysurfer-grad"><stop stop-color="#FFF" offset="0%"/><stop stop-color="#FFF" stop-opacity=".5" offset="100%"/></linearGradient></defs><g fill="none"><g transform="translate(10.081)"><path d="M83.698 84.028A49.193 49.193 0 0092.09 72.82a48.808 48.808 0 005.967-23.46C98.057 22.286 76.109.337 49.033.337S.008 22.286.008 49.36c0 13.716 5.633 26.117 14.71 35.015 0 0 12.383-5.809 13.552-6.06 1.17-.25 13.65.033 20.763.033 4.731 0 14.302-.814 21.156-.149l13.51 5.828z" fill="#4DB6B6"/><path d="M70.751 79.438c9.316-6.738 15.378-17.7 15.378-30.077 0-20.488-16.608-37.096-37.096-37.096-20.488 0-37.096 16.608-37.096 37.096 0 12.368 6.052 23.322 15.355 30.062l22.034 7.411 21.425-7.396z" fill="#FFF"/><circle fill="#FFB721" cx="49.033" cy="49.361" r="27.495"/><path d="M49.325 86.496H49.3c-6.482-.148-11.248-3.588-11.447-3.734-.357-.24-9.652-6.368-20.325.057-.622.375-1.024.607-1.324.78-.552.318-.719.414-1.352.883a1.147 1.147 0 01-1.362-1.842 12.7 12.7 0 011.568-1.025c.293-.169.683-.394 1.288-.758 11.96-7.2 22.39-.264 22.83.034.073.053 4.425 3.174 10.15 3.314 5.757-.141 10.077-3.26 10.12-3.292.12-.086 11.37-7.986 22.922-.018 1.144.79 1.505 1.034 2.195 1.42a1.146 1.146 0 01-1.116 2c-.776-.433-1.218-.732-2.38-1.535-10.237-7.06-20.175-.083-20.274-.012-.19.14-4.956 3.58-11.44 3.728h-.027z" fill="#FFF"/><path d="M49.325 91.772l-.062-.002c-6.98-.16-12.143-3.886-12.36-4.044-.37-.267-9.353-6.59-18.342 0a2.748 2.748 0 11-3.25-4.436c9.824-7.203 20.546-3.15 24.843 0 .03.023 4.001 2.84 9.171 2.98 5.172-.14 9.142-2.957 9.181-2.986 4.287-3.143 15.01-7.197 24.835.006a2.75 2.75 0 11-3.25 4.435c-9.069-6.646-18.25-.067-18.343 0-.216.16-5.377 3.886-12.36 4.045l-.063.002zm-3.689-64.145h7.053l14.052 36.535h-7.228l-2.858-7.526H41.747l-2.972 7.526h-7.228l14.09-36.535zm3.57 9.686l-4.902 12.543h9.775l-4.873-12.543z" fill="#002943"/><path d="M1.07 39.182C13.144 45.6 29.588 49.55 47.714 49.55c19.326 0 36.742-4.491 48.986-11.676C91.53 16.342 72.153.337 49.033.337 25.448.337 5.756 16.993 1.07 39.182z" fill="url(#anysurfer-grad)" opacity=".5"/></g><path d="M15.237 99.407v14.364h-1.822v-2.469c-.775.942-1.644 1.65-2.607 2.126-.964.475-2.018.713-3.162.713-2.033 0-3.77-.737-5.208-2.211-1.44-1.475-2.158-3.268-2.158-5.38 0-2.068.725-3.837 2.178-5.307 1.452-1.47 3.199-2.205 5.24-2.205 1.18 0 2.247.25 3.202.753.955.501 1.793 1.254 2.515 2.257v-2.64h1.822zM7.85 100.82a5.578 5.578 0 00-2.849.758 5.562 5.562 0 00-2.077 2.13 5.83 5.83 0 00-.77 2.9c0 1.012.259 1.979.777 2.902a5.665 5.665 0 002.09 2.156 5.463 5.463 0 002.815.77c1.012 0 1.97-.254 2.875-.764a5.345 5.345 0 002.09-2.07c.488-.87.732-1.85.732-2.941 0-1.661-.547-3.05-1.642-4.167-1.094-1.116-2.441-1.674-4.041-1.674zm11.545-1.413h1.848v2.574c.74-.985 1.558-1.722 2.456-2.21a6.039 6.039 0 012.93-.733c1.074 0 2.027.273 2.859.818a4.879 4.879 0 011.842 2.205c.395.924.593 2.363.593 4.317v7.393h-1.848v-6.852c0-1.654-.068-2.759-.205-3.313-.214-.95-.625-1.666-1.233-2.146-.607-.479-1.4-.719-2.376-.719-1.118 0-2.12.37-3.004 1.11a5.19 5.19 0 00-1.75 2.745c-.176.713-.264 2.015-.264 3.908v5.267h-1.848V99.407zm14.945 0h1.954l4.936 11.06 4.793-11.06h1.967l-8.568 19.618H37.47l2.765-6.342z" fill="#002943"/><path d="M57.6 100.978l-1.188 1.228c-.988-.96-1.955-1.44-2.898-1.44-.6 0-1.115.199-1.542.595-.428.396-.642.858-.642 1.386 0 .467.176.91.53 1.333.352.431 1.092.938 2.222 1.518 1.375.713 2.31 1.4 2.805 2.06.484.668.727 1.421.727 2.257 0 1.18-.414 2.179-1.243 2.997-.829.818-1.864 1.228-3.107 1.228-.829 0-1.62-.18-2.374-.542a5.152 5.152 0 01-1.87-1.492l1.161-1.32c.944 1.065 1.945 1.597 3.004 1.597.74 0 1.371-.237 1.892-.712.52-.476.78-1.035.78-1.677 0-.528-.171-1-.515-1.413-.344-.405-1.12-.915-2.329-1.531-1.296-.669-2.178-1.329-2.646-1.98a3.73 3.73 0 01-.7-2.231c0-1.091.371-1.998 1.117-2.72.744-.721 1.685-1.082 2.823-1.082 1.322 0 2.654.648 3.993 1.94zm3.037-1.571h1.848v6.707c0 1.637.088 2.764.264 3.38.265.88.77 1.575 1.514 2.085.745.51 1.633.766 2.664.766 1.031 0 1.906-.248 2.625-.746a3.817 3.817 0 001.487-1.96c.185-.554.277-1.73.277-3.525v-6.706h1.888v7.05c0 1.98-.23 3.472-.693 4.475a5.292 5.292 0 01-2.086 2.357c-.928.567-2.092.851-3.492.851-1.399 0-2.567-.284-3.505-.851a5.248 5.248 0 01-2.098-2.377c-.463-1.016-.694-2.545-.694-4.587v-6.919zm15.973 0h1.888v2.1c.564-.828 1.158-1.446 1.783-1.855.625-.41 1.276-.614 1.954-.614.51 0 1.056.162 1.637.488l-.964 1.557c-.388-.167-.713-.25-.977-.25-.616 0-1.21.253-1.782.758-.572.506-1.008 1.292-1.307 2.357-.23.819-.344 2.473-.344 4.964v4.858H76.61V99.407zm16.04-5.544v1.808c-.677-.29-1.258-.435-1.742-.435-.36 0-.66.072-.898.218-.237.144-.387.312-.449.501-.061.19-.092.693-.092 1.512l-.001 1.94h2.998v1.598h-3l-.01 12.765h-1.848v-12.765H85.72v-1.598h1.888v-2.244c0-1.03.094-1.764.284-2.205.188-.44.51-.793.964-1.062.453-.268 1-.403 1.643-.403.598 0 1.315.124 2.152.37zm14.667 15.142l1.558.818c-.511 1.004-1.1 1.813-1.77 2.43a7.03 7.03 0 01-2.26 1.405c-.837.321-1.784.482-2.841.482-2.343 0-4.175-.768-5.497-2.304-1.321-1.535-1.982-3.271-1.982-5.208 0-1.821.56-3.445 1.678-4.87 1.418-1.814 3.316-2.72 5.695-2.72 2.45 0 4.404.928 5.867 2.785 1.04 1.311 1.568 2.949 1.585 4.91H96.427c.034 1.67.568 3.037 1.598 4.104 1.031 1.067 2.304 1.6 3.82 1.6.732 0 1.443-.127 2.135-.381.691-.255 1.28-.592 1.765-1.013.484-.42 1.009-1.1 1.572-2.038zm0-3.868c-.246-.985-.606-1.774-1.077-2.363-.472-.59-1.095-1.065-1.87-1.426a5.731 5.731 0 00-2.446-.541c-1.41 0-2.622.453-3.635 1.36-.74.66-1.3 1.65-1.679 2.97h10.707zm4.779-5.73h1.888v2.1c.563-.828 1.157-1.446 1.782-1.855.625-.41 1.276-.614 1.954-.614.51 0 1.057.162 1.637.488l-.963 1.557c-.388-.167-.714-.25-.978-.25-.616 0-1.21.253-1.782.758-.572.506-1.008 1.292-1.307 2.357-.23.819-.344 2.473-.344 4.964v4.858h-1.887V99.407z" fill="#405F72"/></g></svg>
+    </div>
+  </div>
+  <p class="nav-hint">
+    <kbd>Spatie</kbd> om verder te gaan &nbsp;·&nbsp;
+    <kbd>Shift</kbd>+<kbd>Spatie</kbd> om terug te gaan &nbsp;·&nbsp;
+    <kbd>F</kbd> voor volledig scherm &nbsp;·&nbsp;
+    <kbd>Esc</kbd> voor overzicht
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WAT ZIJN TEKSTALTERNATIEVEN?
+════════════════════════════════════════════ -->
+<section>
+  <h3>Wat is een tekstalternatief?</h3>
+  <p>Een <strong>tekstalternatief</strong> is een stuk tekst dat een <strong>niet-tekstueel element vervangt of beschrijft</strong> — een afbeelding, pictogram, grafiek, diagram of audio/videofragment.</p>
+  <p>Schermlezers en andere ondersteunende technologieën <strong>lezen het tekstalternatief voor</strong> wanneer ze niet-tekstuele inhoud tegenkomen.</p>
+  <p>Zonder een goed tekstalternatief wordt <strong>niet-tekstuele inhoud onzichtbaar</strong> voor gebruikers die het niet visueel of auditief kunnen waarnemen.</p>
+  <hr class="divider">
+  <p style="font-size:.88em; color:#aaa;">Niet-tekstuele inhoud omvat: afbeeldingen, SVG's, pictogramlettertypen, CSS-achtergrondafbeeldingen, audio, video, grafieken, CAPTCHA en decoratieve illustraties.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WCAG-VEREISTE
+════════════════════════════════════════════ -->
+<section>
+  <h3>De WCAG-vereiste</h3>
+  <p><strong>WCAG 2.x Succescriterium 1.1.1 – Niet-tekstuele inhoud</strong> (Niveau A)</p>
+  <blockquote style="font-size:.9em; border-left:4px solid #93e0d5; padding-left:1em; color:#ccc;">
+    Alle niet-tekstuele inhoud die aan de gebruiker wordt gepresenteerd, heeft een tekstalternatief dat hetzelfde doel dient…
+  </blockquote>
+  <p>Een korte lijst van wat "hetzelfde doel dienen" inhoudt:</p>
+  <ul style="font-size:.9em;">
+    <li><strong>Informatieve afbeeldingen</strong> → alt-tekst die de inhoud of functie beschrijft</li>
+    <li><strong>Decoratieve afbeeldingen</strong> → leeg <code>alt=""</code> zodat ze worden genegeerd</li>
+    <li><strong>Functionele afbeeldingen</strong> (knoppen, links) → alt-tekst die de <em>actie</em> beschrijft</li>
+    <li><strong>Complexe afbeeldingen</strong> (grafieken, diagrammen) → korte alt + langere beschrijving</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HET SPEL
+════════════════════════════════════════════ -->
+<section>
+  <h3>Het spel</h3>
+  <div class="rules">
+    <h4>Regels</h4>
+    <ol>
+      <li>Er verschijnt een codevoorbeeld op het scherm.</li>
+      <li>Beslis wat een schermlezer <strong>aankondigt</strong> voor het gemarkeerde element.</li>
+      <li>Roep je antwoord als eerste om <strong>chocolade te winnen!</strong> 🍫</li>
+    </ol>
+  </div>
+  <hr class="divider">
+  <p style="font-size:.85em; color:#aaa;">We gebruiken <strong>NVDA + Chrome</strong> als referentieschermlezer in alle voorbeelden.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 1 + ANTWOORD 1
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 1</p>
+    <h4>Wat kondigt een schermlezer aan voor deze afbeelding?</h4>
+    <pre><code class="language-html">&lt;img src="hero-banner.jpg"&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 1</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"hero-banner.jpg &nbsp;afbeelding"</span>
+    <p>Wanneer het <code>alt</code>-attribuut <strong>volledig ontbreekt</strong>, vallen veel schermlezers terug op het aankondigen van de <strong>bestandsnaam</strong> gevolgd door "afbeelding".</p>
+    <div class="tip">
+      <strong>Waarom het belangrijk is:</strong> bestandsnamen zoals <code>IMG_4892.jpg</code>, <code>banner_v3_FINAL.png</code> of automatisch gegenereerde namen zijn zinloos voor schermlezergebruikers. Een ontbrekend <code>alt</code> is een <strong>WCAG 1.1.1-fout</strong>.
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 1 – oplossing</p>
+    <pre><code class="language-html">&lt;!-- ❌ Ontbrekend alt --&gt;
+&lt;img src="hero-banner.jpg"&gt;
+
+&lt;!-- ✅ Beschrijvend alt --&gt;
+&lt;img src="hero-banner.jpg"
+     alt="Team van ontwikkelaars dat samenwerkt rond een laptop"&gt;</code></pre>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 2 + ANTWOORD 2
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 2</p>
+    <h4>Wat kondigt een schermlezer aan voor deze afbeelding?</h4>
+    <pre><code class="language-html">&lt;img src="decorative-swoosh.png" alt=""&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 2</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced none">Niets — de afbeelding wordt overgeslagen</span>
+    <p>Een <strong>leeg <code>alt=""</code></strong> vertelt ondersteunende technologieën: <em>"deze afbeelding is decoratief — negeer hem."</em></p>
+    <p>De schermlezer gaat rechtstreeks voorbij de afbeelding zonder iets aan te kondigen.</p>
+    <div class="tip">
+      <strong>Belangrijk onderscheid:</strong> <code>alt=""</code> en een <em>ontbrekend</em> <code>alt</code> zijn heel verschillend! Leeg alt = bewust decoratief. Ontbrekend alt = kapot.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 3 + ANTWOORD 3
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 3</p>
+    <h4>Wat kondigt een schermlezer aan voor deze knop?</h4>
+    <pre><code class="language-html">&lt;button&gt;
+  &lt;img src="close-icon.png" alt=""&gt;
+&lt;/button&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 3</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced none">"knop" — geen toegankelijke naam</span>
+    <p>De afbeelding is decoratief (<code>alt=""</code>), dus ze draagt <strong>niets</strong> bij aan de toegankelijke naam van de knop. De knop heeft helemaal geen naam.</p>
+    <p>Een schermlezer kondigt de rol aan ("knop") maar geeft geen enkele aanwijzing over het <em>doel</em> ervan.</p>
+    <div class="tip">
+      <strong>Oplossing:</strong> als een knop <em>alleen</em> een afbeelding bevat, moet die afbeelding het doel van de knop in zijn <code>alt</code> dragen. Of gebruik <code>aria-label</code>.
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 3 – oplossing</p>
+    <pre><code class="language-html">&lt;!-- ✅ Optie A: betekenisvol alt --&gt;
+&lt;button&gt;
+  &lt;img src="close-icon.png" alt="Dialoogvenster sluiten"&gt;
+&lt;/button&gt;
+
+&lt;!-- ✅ Optie B: aria-label --&gt;
+&lt;button aria-label="Dialoogvenster sluiten"&gt;
+  &lt;img src="close-icon.png" alt=""&gt;
+&lt;/button&gt;</code></pre>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 4 + ANTWOORD 4
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 4</p>
+    <h4>Wat kondigt een schermlezer aan voor deze sterrenbeoordeling?</h4>
+    <pre><code class="language-html">&lt;img src="star.png" alt="ster"&gt;
+&lt;img src="star.png" alt="ster"&gt;
+&lt;img src="star.png" alt="ster"&gt;
+&lt;img src="star-empty.png" alt="lege ster"&gt;
+&lt;img src="star-empty.png" alt="lege ster"&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 4</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"ster &nbsp;ster &nbsp;ster &nbsp;lege ster &nbsp;lege ster"</span>
+    <p>Elke afbeelding wordt afzonderlijk aangekondigd. De gebruiker hoort vijf aparte aankondigingen — ze moeten mentaal tellen. Dit is vermoeiend en foutgevoelig.</p>
+    <div class="tip">
+      <strong>Beter patroon:</strong> zet de volledige beoordeling op de <em>eerste</em> afbeelding en onderdruk de rest.
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 4 – oplossing</p>
+    <pre><code class="language-html">&lt;!-- ✅ Eerste afbeelding draagt de betekenis, rest is decoratief --&gt;
+&lt;img src="star.png"       alt="3 van de 5 sterren"&gt;
+&lt;img src="star.png"       alt=""&gt;
+&lt;img src="star.png"       alt=""&gt;
+&lt;img src="star-empty.png" alt=""&gt;
+&lt;img src="star-empty.png" alt=""&gt;</code></pre>
+    <p>Schermlezer kondigt aan: <span class="announced" style="font-size:.85em;">"3 van de 5 sterren &nbsp;afbeelding"</span></p>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 5 + ANTWOORD 5
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 5</p>
+    <h4>Wat kondigt een schermlezer aan voor deze afbeelding?</h4>
+    <pre><code class="language-html">&lt;img src="q1-sales-chart.png" alt="Grafiek"&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 5</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"Grafiek &nbsp;afbeelding"</span>
+    <p>Technisch gezien geldige HTML — er <em>is</em> een alt — maar <strong>"Grafiek" vertelt de gebruiker bijna niets</strong>. Welk soort grafiek? Welke gegevens? Wat is de trend?</p>
+    <p>Een tekstalternatief moet <strong>dezelfde informatie</strong> overbrengen die de afbeelding aan ziende gebruikers toont.</p>
+    <div class="tip">
+      <strong>Voor eenvoudige grafieken:</strong> beschrijf het belangrijkste inzicht in de alt-tekst.<br>
+      <strong>Voor complexe grafieken:</strong> gebruik een korte alt + een aangrenzende datatabel of uitgebreide beschrijving.
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 5 – oplossing</p>
+    <pre><code class="language-html">&lt;!-- ✅ Brengt betekenis over --&gt;
+&lt;img src="q1-sales-chart.png"
+     alt="Staafgrafiek: Q1-omzet steeg 45% jaar op jaar,
+          van €120k naar €174k"&gt;</code></pre>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 6 + ANTWOORD 6
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 6</p>
+    <h4>Wat kondigt een schermlezer aan voor deze link?</h4>
+    <pre><code class="language-html">&lt;a href="/cart"&gt;
+  &lt;img src="shopping-cart-icon.png" alt=""&gt;
+  3 artikelen in winkelwagen
+&lt;/a&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 6</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"3 artikelen in winkelwagen &nbsp;link"</span>
+    <p>De afbeelding is gemarkeerd als decoratief (<code>alt=""</code>), dus wordt hij genegeerd. De toegankelijke naam van de link komt van de <strong>zichtbare tekstinhoud</strong> — die hier perfect beschrijvend is.</p>
+    <div class="tip">
+      <strong>Goed patroon:</strong> als een link of knop al beschrijvende <em>tekst</em> heeft, markeer het bijbehorende pictogram als decoratief (<code>alt=""</code>) om herhaling te voorkomen. De schermlezer zal niet zeggen "winkelwagen afbeelding 3 artikelen in winkelwagen link".
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 7 + ANTWOORD 7
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 7</p>
+    <h4>Wat kondigt een schermlezer aan voor deze afbeelding?</h4>
+    <pre><code class="language-html">&lt;img
+  src="team-photo.jpg"
+  title="Teamfoto"
+  alt="Het Bworx-team op de conferentie in Brussel 2024"
+&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 7</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"Het Bworx-team op de conferentie in Brussel 2024 &nbsp;afbeelding"</span>
+    <p>Het <code>alt</code>-attribuut wint. Het <code>title</code>-attribuut wordt alleen als <strong>terugvaloptie</strong> gebruikt wanneer <code>alt</code> afwezig is.</p>
+    <p>Prioriteitsvolgorde voor de naam van <code>&lt;img&gt;</code>:</p>
+    <ol style="font-size:.9em;">
+      <li><code>aria-labelledby</code></li>
+      <li><code>aria-label</code></li>
+      <li><code>alt</code></li>
+      <li><code>title</code> (laatste redmiddel)</li>
+    </ol>
+    <div class="tip">
+      <strong>Vertrouw niet op <code>title</code></strong> als enig tekstalternatief — het wordt niet door alle schermlezers aangekondigd en is onzichtbaar op touchapparaten.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 8 + ANTWOORD 8
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 8</p>
+    <h4>Wat kondigt een schermlezer aan voor deze afbeelding? (lastig!)</h4>
+    <pre><code class="language-html">&lt;img
+  src="award-badge.png"
+  alt="Beste toegankelijke website 2024"
+  aria-label="Onderscheidingsbadge"
+&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 8</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"Onderscheidingsbadge &nbsp;afbeelding"</span>
+    <p><code>aria-label</code> staat <strong>hoger</strong> in de berekening van de toegankelijke naam dan <code>alt</code>, en wint dus — ook al is de <code>alt</code> beschrijvender.</p>
+    <p>De betekenisvolle alt-tekst <em>"Beste toegankelijke website 2024"</em> wordt volledig overschreven.</p>
+    <div class="tip">
+      <strong>Les:</strong> <code>aria-label</code> op een afbeelding overschrijft <code>alt</code>. Deze combinatie is bijna altijd een vergissing — kies één van de twee. Gebruik voor afbeeldingen bij voorkeur <code>alt</code>.
+    </div>
+    <pre><code class="language-html">&lt;!-- ✅ Gebruik gewoon alt --&gt;
+&lt;img src="award-badge.png" alt="Beste toegankelijke website 2024"&gt;</code></pre>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 9 + ANTWOORD 9
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 9</p>
+    <h4>Wat kondigt een schermlezer aan voor deze figure?</h4>
+    <pre><code class="language-html">&lt;figure&gt;
+  &lt;img src="revenue-pie-chart.png" alt=""&gt;
+  &lt;figcaption&gt;
+    Omzet per regio: Europa 48%, Amerika 31%, Azië 21%
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 9</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced none">Afbeelding overgeslagen — "Omzet per regio: Europa 48%…" (als zichtbare tekst)</span>
+    <p>De afbeelding heeft <code>alt=""</code>, dus <strong>schermlezers slaan de afbeelding over</strong>. De <code>&lt;figcaption&gt;</code> wordt gelezen als gewone <em>zichtbare tekst</em> — niet als tekstalternatief van de afbeelding.</p>
+    <p>In dit voorbeeld is het resultaat <strong>aanvaardbaar</strong>, omdat de bijschrift de gegevens van de grafiek volledig weergeeft. Maar als de grafiek iets toonde wat de bijschrift niet beschreef, zou de afbeelding stil verloren gaan.</p>
+    <div class="tip">
+      <strong>Vuistregel:</strong> als <code>&lt;figcaption&gt;</code> de betekenis van de afbeelding volledig vervangt → <code>alt=""</code> is prima. Als het alleen aanvult → schrijf ook een betekenisvolle <code>alt</code>.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 10 + ANTWOORD 10  (eindbaas)
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 10 — Eindbaas 💀</p>
+    <h4>Wat kondigt een schermlezer aan voor de knop?</h4>
+    <pre><code class="language-html">&lt;button aria-labelledby="lbl"&gt;
+  &lt;img src="trash.png" alt="Verwijderen"&gt;
+  &lt;span&gt;Verwijder&lt;/span&gt;
+&lt;/button&gt;
+&lt;span id="lbl" hidden&gt;Dit bestand permanent verwijderen&lt;/span&gt;</code></pre>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 10</p>
+    <span class="answer-label">ANTWOORD</span>
+    <br>
+    <span class="announced">"Dit bestand permanent verwijderen &nbsp;knop"</span>
+    <p><code>aria-labelledby</code> is de hoogst-prioritaire bron in de berekening van de toegankelijke naam. Het verwijst naar de verborgen <code>&lt;span id="lbl"&gt;</code>, dus die tekst wint — en overschrijft zowel <code>alt="Verwijderen"</code> <em>als</em> de zichtbare <code>&lt;span&gt;Verwijder&lt;/span&gt;</code>.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 10 – prioriteitsvolgorde</p>
+    <p>Prioriteitsvolgorde voor knoppen:</p>
+    <ol style="font-size:.88em;">
+      <li><strong><code>aria-labelledby</code></strong> → "Dit bestand permanent verwijderen" ✅ wint</li>
+      <li><code>aria-label</code></li>
+      <li>Inhoud (alt-tekst + zichtbare tekst) → "Verwijderen Verwijder"</li>
+      <li><code>title</code></li>
+    </ol>
+    <div class="tip">
+      <strong>Conclusie:</strong> <code>aria-labelledby</code> wint altijd. Het kan verwijzen naar verborgen elementen. Gebruik het bewust — en let op onbedoelde overschrijvingen.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LEERPUNTEN
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <h3>Leerpunten (1/2)</h3>
+    <ol class="takeaways" style="font-size:.93em;">
+      <li><strong>Ontbrekend <code>alt</code></strong> ≠ leeg <code>alt</code>. Ontbrekend = kapot; leeg = decoratief.</li>
+      <li>Functionele afbeeldingen (in knoppen/links) moeten de <strong>actie</strong> beschrijven, niet de afbeelding zelf.</li>
+      <li>Voor complexe afbeeldingen moet de alt <strong>dezelfde informatie</strong> overbrengen als het visuele — niet alleen het type benoemen.</li>
+      <li><code>aria-label</code> en <code>aria-labelledby</code> <strong>overschrijven</strong> <code>alt</code>. Gebruik ze bewust.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Leerpunten (2/2)</h3>
+    <ol class="takeaways" style="font-size:.93em;" start="5">
+      <li><code>&lt;figcaption&gt;</code> is zichtbare tekst — het wordt <strong>niet</strong> automatisch het tekstalternatief van de afbeelding.</li>
+      <li>Als tekst al aanwezig is naast een pictogram, markeer het pictogram als <code>alt=""</code> om herhaling te vermijden.</li>
+      <li>Je kunt tekstalternatieven snel controleren via de <strong>Accessibility Tree</strong> van je browser (DevTools → Elements → Accessibility).</li>
+    </ol>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VERDERE LECTUUR
+════════════════════════════════════════════ -->
+<section>
+  <h3>Verdere lectuur</h3>
+  <ul style="font-size:.92em;">
+    <li><a href="https://www.w3.org/WAI/tutorials/images/" style="color:#93e0d5;">W3C WAI – Images Tutorial</a> — beslisboom voor het kiezen van de juiste alt-aanpak</li>
+    <li><a href="https://www.w3.org/TR/accname-1.1/" style="color:#93e0d5;">Accessible Name and Description Computation (W3C)</a></li>
+    <li><a href="https://webaim.org/techniques/alttext/" style="color:#93e0d5;">WebAIM – Alternative Text</a></li>
+    <li><a href="https://html5accessibility.com/tests/treeorder.html" style="color:#93e0d5;">HTML5 Accessibility – Accessible name live tests</a></li>
+    <li><a href="https://www.deque.com/axe/" style="color:#93e0d5;">axe DevTools</a> — browserextensie die ontbrekende tekstalternatieven automatisch opspoort</li>
+  </ul>
+  <hr class="divider">
+  <p style="text-align:center; font-size:.85em; color:#a8aab8;">Bedankt voor het meedoen! 🍫</p>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    highlight: {
+      highlightOnLoad: true
+    }
+  });
+  document.querySelectorAll('pre code').forEach(el => hljs.highlightElement(el));
+</script>
+</body>
+</html>
