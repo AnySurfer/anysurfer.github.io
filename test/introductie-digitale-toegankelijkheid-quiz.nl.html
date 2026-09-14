@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz introductie digitale toegankelijkheid - AnySurfer </title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/moon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+
+
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write(' < link rel = "stylesheet"
+          href = "css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css"
+          type = "text/css"
+          media = "print" > ' );
+    </script>
+    <style type="text/css">
+    /* ── Base font size (moon theme default = 40px; verkleind zodat inhoud past) ── */
+    .reveal { font-size: 26px; }
+
+    /* ── Layout tweaks ── */
+    .reveal .slides { text-align: left; }
+    .reveal h1, .reveal h2 { text-align: center; }
+    .reveal h3 { color: #93e0d5; font-size: 1.1em; text-transform: uppercase; letter-spacing: .08em; }
+    .reveal h4 { color: #f9c74f; font-size: 1em; margin-bottom: .4em; }
+
+    /* ── Persona portret ── */
+    .persona-header { display:flex; align-items:center; gap:.9em; margin-bottom:.3em; }
+    .persona-header img { width: 78px; height: 78px; object-fit: cover; border-radius: 50%; border: 2px solid #93e0d5; flex-shrink:0; }
+    .persona-header h4 { margin-bottom: 0; }
+    blockquote.persona-quote { font-size:.88em; border-left:4px solid #93e0d5; padding-left:1em; color:#ccc; margin: .6em 0; }
+
+    /* ── Answer options ── */
+    .options { list-style:none; padding-left:0; font-size:.92em; }
+    .options li { margin-bottom:.55em; padding:.4em .7em; border-radius:6px; background: rgba(255,255,255,.04); }
+    .options li strong { color:#93e0d5; margin-right:.4em; }
+
+    /* ── Announced box (hergebruikt als antwoord-uitlichting) ── */
+    .announced {
+      display: inline-block;
+      background: rgba(147, 224, 213, .15);
+      border: 2px solid #93e0d5;
+      border-radius: 6px;
+      padding: .35em .9em;
+      font-size: 1.05em;
+      color: #93e0d5;
+      margin: .4em 0 .6em;
+    }
+    .announced.none { border-color: #ff9090; color: #ff9090; background: rgba(255,144,144,.1); }
+
+    /* ── Tips ── */
+    .tip {
+      background: rgba(249,199,79,.08);
+      border-left: 4px solid #f9c74f;
+      padding: .6em 1em;
+      border-radius: 0 6px 6px 0;
+      font-size: .88em;
+      margin-top: .8em;
+      color: #ddd;
+    }
+    .tip strong { color: #f9c74f; }
+
+    /* ── Rule list ── */
+    .rules ol { padding-left: 1.4em; }
+    .rules li { margin-bottom: .5em; font-size: .95em; }
+
+    /* ── Takeaway list ── */
+    .reveal .takeaways li { margin-bottom: .55em; }
+
+    /* ── Nav hint ── */
+    .nav-hint {
+      font-size: .72em;
+      color: #a8aab8;
+      text-align: center;
+      margin-top: 2em;
+    }
+    .nav-hint kbd {
+      background: #2a3a4a;
+      border: 1px solid #4a5a6a;
+      border-radius: 3px;
+      padding: .1em .35em;
+      font-size: .9em;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: .7em;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #a8aab8;
+      margin-bottom: .3em;
+    }
+
+    /* ── Correct / Wrong pills ── */
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .1em .7em;
+      font-size: .78em;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    .pill.good  { background: #2d9e6b; color: #fff; }
+    .pill.bad   { background: #c0392b; color: #fff; }
+    .pill.meh   { background: #e67e22; color: #fff; }
+
+    hr.divider { border: none; border-top: 1px solid #334; margin: .9em 0; }
+    .reveal h3, .reveal h4 {
+    text-transform: none;
+    }
+    </style>
+    <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+            <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+<!-- ═══════════════════════════════════════════
+     TITEL
+════════════════════════════════════════════ -->
+<section>
+  <br>
+  <div style="text-align:center; margin: 1.4em 0 .8em;">
+    <div style="display:inline-block; background:#fff; border-radius:14px; padding:14px 24px;">
+    <svg width="100" height="100" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AnySurfer"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="anysurfer-grad"><stop stop-color="#FFF" offset="0%"/><stop stop-color="#FFF" stop-opacity=".5" offset="100%"/></linearGradient></defs><g fill="none"><g transform="translate(10.081)"><path d="M83.698 84.028A49.193 49.193 0 0092.09 72.82a48.808 48.808 0 005.967-23.46C98.057 22.286 76.109.337 49.033.337S.008 22.286.008 49.36c0 13.716 5.633 26.117 14.71 35.015 0 0 12.383-5.809 13.552-6.06 1.17-.25 13.65.033 20.763.033 4.731 0 14.302-.814 21.156-.149l13.51 5.828z" fill="#4DB6B6"/><path d="M70.751 79.438c9.316-6.738 15.378-17.7 15.378-30.077 0-20.488-16.608-37.096-37.096-37.096-20.488 0-37.096 16.608-37.096 37.096 0 12.368 6.052 23.322 15.355 30.062l22.034 7.411 21.425-7.396z" fill="#FFF"/><circle fill="#FFB721" cx="49.033" cy="49.361" r="27.495"/><path d="M49.325 86.496H49.3c-6.482-.148-11.248-3.588-11.447-3.734-.357-.24-9.652-6.368-20.325.057-.622.375-1.024.607-1.324.78-.552.318-.719.414-1.352.883a1.147 1.147 0 01-1.362-1.842 12.7 12.7 0 011.568-1.025c.293-.169.683-.394 1.288-.758 11.96-7.2 22.39-.264 22.83.034.073.053 4.425 3.174 10.15 3.314 5.757-.141 10.077-3.26 10.12-3.292.12-.086 11.37-7.986 22.922-.018 1.144.79 1.505 1.034 2.195 1.42a1.146 1.146 0 01-1.116 2c-.776-.433-1.218-.732-2.38-1.535-10.237-7.06-20.175-.083-20.274-.012-.19.14-4.956 3.58-11.44 3.728h-.027z" fill="#FFF"/><path d="M49.325 91.772l-.062-.002c-6.98-.16-12.143-3.886-12.36-4.044-.37-.267-9.353-6.59-18.342 0a2.748 2.748 0 11-3.25-4.436c9.824-7.203 20.546-3.15 24.843 0 .03.023 4.001 2.84 9.171 2.98 5.172-.14 9.142-2.957 9.181-2.986 4.287-3.143 15.01-7.197 24.835.006a2.75 2.75 0 11-3.25 4.435c-9.069-6.646-18.25-.067-18.343 0-.216.16-5.377 3.886-12.36 4.045l-.063.002zm-3.689-64.145h7.053l14.052 36.535h-7.228l-2.858-7.526H41.747l-2.972 7.526h-7.228l14.09-36.535zm3.57 9.686l-4.902 12.543h9.775l-4.873-12.543z" fill="#002943"/><path d="M1.07 39.182C13.144 45.6 29.588 49.55 47.714 49.55c19.326 0 36.742-4.491 48.986-11.676C91.53 16.342 72.153.337 49.033.337 25.448.337 5.756 16.993 1.07 39.182z" fill="url(#anysurfer-grad)" opacity=".5"/></g><path d="M15.237 99.407v14.364h-1.822v-2.469c-.775.942-1.644 1.65-2.607 2.126-.964.475-2.018.713-3.162.713-2.033 0-3.77-.737-5.208-2.211-1.44-1.475-2.158-3.268-2.158-5.38 0-2.068.725-3.837 2.178-5.307 1.452-1.47 3.199-2.205 5.24-2.205 1.18 0 2.247.25 3.202.753.955.501 1.793 1.254 2.515 2.257v-2.64h1.822zM7.85 100.82a5.578 5.578 0 00-2.849.758 5.562 5.562 0 00-2.077 2.13 5.83 5.83 0 00-.77 2.9c0 1.012.259 1.979.777 2.902a5.665 5.665 0 002.09 2.156 5.463 5.463 0 002.815.77c1.012 0 1.97-.254 2.875-.764a5.345 5.345 0 002.09-2.07c.488-.87.732-1.85.732-2.941 0-1.661-.547-3.05-1.642-4.167-1.094-1.116-2.441-1.674-4.041-1.674zm11.545-1.413h1.848v2.574c.74-.985 1.558-1.722 2.456-2.21a6.039 6.039 0 012.93-.733c1.074 0 2.027.273 2.859.818a4.879 4.879 0 011.842 2.205c.395.924.593 2.363.593 4.317v7.393h-1.848v-6.852c0-1.654-.068-2.759-.205-3.313-.214-.95-.625-1.666-1.233-2.146-.607-.479-1.4-.719-2.376-.719-1.118 0-2.12.37-3.004 1.11a5.19 5.19 0 00-1.75 2.745c-.176.713-.264 2.015-.264 3.908v5.267h-1.848V99.407zm14.945 0h1.954l4.936 11.06 4.793-11.06h1.967l-8.568 19.618H37.47l2.765-6.342z" fill="#002943"/><path d="M57.6 100.978l-1.188 1.228c-.988-.96-1.955-1.44-2.898-1.44-.6 0-1.115.199-1.542.595-.428.396-.642.858-.642 1.386 0 .467.176.91.53 1.333.352.431 1.092.938 2.222 1.518 1.375.713 2.31 1.4 2.805 2.06.484.668.727 1.421.727 2.257 0 1.18-.414 2.179-1.243 2.997-.829.818-1.864 1.228-3.107 1.228-.829 0-1.62-.18-2.374-.542a5.152 5.152 0 01-1.87-1.492l1.161-1.32c.944 1.065 1.945 1.597 3.004 1.597.74 0 1.371-.237 1.892-.712.52-.476.78-1.035.78-1.677 0-.528-.171-1-.515-1.413-.344-.405-1.12-.915-2.329-1.531-1.296-.669-2.178-1.329-2.646-1.98a3.73 3.73 0 01-.7-2.231c0-1.091.371-1.998 1.117-2.72.744-.721 1.685-1.082 2.823-1.082 1.322 0 2.654.648 3.993 1.94zm3.037-1.571h1.848v6.707c0 1.637.088 2.764.264 3.38.265.88.77 1.575 1.514 2.085.745.51 1.633.766 2.664.766 1.031 0 1.906-.248 2.625-.746a3.817 3.817 0 001.487-1.96c.185-.554.277-1.73.277-3.525v-6.706h1.888v7.05c0 1.98-.23 3.472-.693 4.475a5.292 5.292 0 01-2.086 2.357c-.928.567-2.092.851-3.492.851-1.399 0-2.567-.284-3.505-.851a5.248 5.248 0 01-2.098-2.377c-.463-1.016-.694-2.545-.694-4.587v-6.919zm15.973 0h1.888v2.1c.564-.828 1.158-1.446 1.783-1.855.625-.41 1.276-.614 1.954-.614.51 0 1.056.162 1.637.488l-.964 1.557c-.388-.167-.713-.25-.977-.25-.616 0-1.21.253-1.782.758-.572.506-1.008 1.292-1.307 2.357-.23.819-.344 2.473-.344 4.964v4.858H76.61V99.407zm16.04-5.544v1.808c-.677-.29-1.258-.435-1.742-.435-.36 0-.66.072-.898.218-.237.144-.387.312-.449.501-.061.19-.092.693-.092 1.512l-.001 1.94h2.998v1.598h-3l-.01 12.765h-1.848v-12.765H85.72v-1.598h1.888v-2.244c0-1.03.094-1.764.284-2.205.188-.44.51-.793.964-1.062.453-.268 1-.403 1.643-.403.598 0 1.315.124 2.152.37zm14.667 15.142l1.558.818c-.511 1.004-1.1 1.813-1.77 2.43a7.03 7.03 0 01-2.26 1.405c-.837.321-1.784.482-2.841.482-2.343 0-4.175-.768-5.497-2.304-1.321-1.535-1.982-3.271-1.982-5.208 0-1.821.56-3.445 1.678-4.87 1.418-1.814 3.316-2.72 5.695-2.72 2.45 0 4.404.928 5.867 2.785 1.04 1.311 1.568 2.949 1.585 4.91H96.427c.034 1.67.568 3.037 1.598 4.104 1.031 1.067 2.304 1.6 3.82 1.6.732 0 1.443-.127 2.135-.381.691-.255 1.28-.592 1.765-1.013.484-.42 1.009-1.1 1.572-2.038zm0-3.868c-.246-.985-.606-1.774-1.077-2.363-.472-.59-1.095-1.065-1.87-1.426a5.731 5.731 0 00-2.446-.541c-1.41 0-2.622.453-3.635 1.36-.74.66-1.3 1.65-1.679 2.97h10.707zm4.779-5.73h1.888v2.1c.563-.828 1.157-1.446 1.782-1.855.625-.41 1.276-.614 1.954-.614.51 0 1.057.162 1.637.488l-.963 1.557c-.388-.167-.714-.25-.978-.25-.616 0-1.21.253-1.782.758-.572.506-1.008 1.292-1.307 2.357-.23.819-.344 2.473-.344 4.964v4.858h-1.887V99.407z" fill="#405F72"/></g></svg>
+    </div>
+  </div>
+  <h1>Quiz introductie digitale toegankelijkheid</h1>
+
+  <p class="nav-hint">
+    <kbd>Spatie</kbd> om verder te gaan &nbsp;·&nbsp;
+    <kbd>Shift</kbd>+<kbd>Spatie</kbd> om terug te gaan &nbsp;·&nbsp;
+    <kbd>F</kbd> voor volledig scherm &nbsp;·&nbsp;
+    <kbd>Esc</kbd> voor overzicht
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HET SPEL
+════════════════════════════════════════════ -->
+<section>
+  <h3>Het spel</h3>
+  <div class="rules">
+    <h4>Regels</h4>
+    <ol>
+      <li>Er verschijnt een vraag met vier antwoordmogelijkheden (A–D).</li>
+      <li>Kies welk antwoord volgens jou juist is.</li>
+      <li>Bekijk de oplossing en de uitleg erbij.</li>
+      <li>Enkele vragen vertrekken vanuit het verhaal van een echte AnySurfer-persona.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 1 + ANTWOORD 1
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 1</p>
+    <h4>Wat is de juiste definitie van (digitale) toegankelijkheid?</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Een website die er op elk toestel mooi uitziet</li>
+      <li><strong>B.</strong> Een omgeving waarin iedereen zelfstandig, veilig en comfortabel kan doen wat de bedoeling is</li>
+      <li><strong>C.</strong> Een website die uitsluitend rekening houdt met blinde gebruikers</li>
+      <li><strong>D.</strong> Een verplichting die enkel voor overheidswebsites geldt</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 1</p>
+    <span class="pill good">B is correct</span>
+    <p class="announced">"Iedereen kan zelfstandig, veilig en comfortabel doen wat de bedoeling is."</p>
+    <p>Toegankelijkheid gaat niet over één specifieke doelgroep en ook niet enkel over esthetiek. Digitaal vertaalt zich dit naar inhoud die <strong>waarneembaar, begrijpelijk en bruikbaar</strong> is voor iedereen — ongeacht beperking, toestel of context.</p>
+    <div class="tip">
+      <strong>Let op:</strong> optie D klopt niet: sinds de European Accessibility Act geldt de verplichting ook voor grote delen van de private sector.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 2 + ANTWOORD 2
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 2</p>
+    <h4>Wat houdt het "curb-cut effect" (stoeprandeffect) in?</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Een wettelijke norm voor de hoogte van stoepranden</li>
+      <li><strong>B.</strong> Een technisch WCAG-criterium over navigatie</li>
+      <li><strong>C.</strong> Oplossingen ontworpen voor mensen met een beperking blijken ook een veel breder publiek te helpen</li>
+      <li><strong>D.</strong> Een methode om kleurencontrast te meten</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 2</p>
+    <span class="pill good">C is correct</span>
+    <p>De verlaagde stoeprand werd oorspronkelijk ontworpen voor rolstoelgebruikers, maar blijkt ook enorm handig voor ouders met een buggy, oudere mensen en pakjesbezorgers.</p>
+    <div class="tip">
+      <strong>Digitale vertaling:</strong> ondertitels helpen dove gebruikers, maar ook wie in een lawaaierige ruimte of zonder geluid kijkt. Goede toetsenbordnavigatie helpt gebruikers met een motorische beperking, maar ook powerusers. Inclusief ontwerpen verbetert de ervaring voor <em>iedereen</em>.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 3 + ANTWOORD 3
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 3</p>
+    <h4>Welk percentage van de Belgische websites voldoet NIET aan minstens één toegankelijkheidseis? (bron: Digital Trust Index 2024)</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Minder dan 5%</li>
+      <li><strong>B.</strong> Ongeveer 25%</li>
+      <li><strong>C.</strong> Ongeveer 50%</li>
+      <li><strong>D.</strong> 94%</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 3</p>
+    <span class="pill good">D is correct</span>
+    <p class="announced none">94%</p>
+    <p>Ondanks bestaande wetgeving en duidelijke technische standaarden haalt het overgrote deel van de Belgische websites de toegankelijkheidsnormen nog niet. Bij 1 op de 4 Belgische websites lopen de problemen zelfs op tot meer dan drie gefaalde tests. De meest voorkomende problemen: onvoldoende kleurcontrast en ontbrekende beschrijvende tekst bij afbeeldingen en links.</p>
+    <div class="tip">
+      <strong>Waarom dit telt:</strong> gebrek aan toegankelijkheid sluit niet alleen mensen met een beperking uit, maar ook oudere gebruikers, mobiele gebruikers en iedereen met een tijdelijke beperking (bv. een gebroken arm, fel zonlicht op het scherm).
+    </div>
+    <p style="font-size:.78em; color:#a8aab8; margin-top:.6em;">Bron: <a href="https://www.feweb.be/nl/nieuws/bericht/2024/06/28/94-van-de-belgische-websites-voldoen-niet-aan-toegankelijkheidseisen" style="color:#93e0d5;">FeWeb — "94% van de Belgische websites voldoen niet aan toegankelijkheidseisen"</a> (Digital Trust Index 2024, 7.408 geteste Belgische pagina's)</p>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 4 + ANTWOORD 4  — PERSONA: NINA (ADHD)
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 4 — Persona</p>
+    <div class="persona-header">
+      <img src="https://slides.anysurfer.be/tech/img/nina.png" alt="Nina">
+      <h4>Nina heeft ADHD</h4>
+    </div>
+    <blockquote class="persona-quote">"Ik kan me moeilijk concentreren. Ik ben super gevoelig voor zintuiglijke prikkels en onthoud dingen niet goed."</blockquote>
+    <p>Nina bezoekt een website met een <strong>autoplay-diavoorstelling</strong> in de hero-banner die ze niet kan stoppen of pauzeren.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Vraag 4</p>
+    <h4>Wat is hier het probleem, en wat is de juiste oplossing?</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Geen probleem: schermlezers kunnen de diavoorstelling toch negeren</li>
+      <li><strong>B.</strong> De niet-stopbare beweging leidt Nina af en geeft haar geen tijd om de content te lezen — voorzie een pauzeknop of stop de animatie automatisch na enkele seconden</li>
+      <li><strong>C.</strong> Het probleem is te weinig kleurcontrast — voeg een donkere modus toe</li>
+      <li><strong>D.</strong> Het probleem is de bestandsgrootte van de afbeeldingen — comprimeer ze</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 4</p>
+    <span class="pill good">B is correct</span>
+    <p>Elke beweging (diavoorstelling, video, animatie) die niet gestopt kan worden, is erg storend voor Nina. Diavoorstellingen met wisselende content geven haar geen tijd om te lezen voor het beeld alweer verandert.</p>
+    <div class="tip">
+      <strong>Oplossingen:</strong> voorzie een pauzeknop, stop animaties zoals gifs automatisch na maximaal 5 seconden, speel geluid nooit automatisch af, en beperk afleidingen. Laat de <em>controle</em> bij de gebruiker.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 5 + ANTWOORD 5  — PERSONA: JERRY (kleurenblind)
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 5 — Persona</p>
+    <div class="persona-header">
+      <img src="https://slides.anysurfer.be/tech/img/jerry.png" alt="Jerry">
+      <h4>Jerry is kleurenblind</h4>
+    </div>
+    <blockquote class="persona-quote">"Ik kan niet meespelen met UNO want ik zie niet of mijn kaarten rood of groen zijn."</blockquote>
+    <p>Jerry krijgt een e-mail waarin de <strong>beschikbare dagen enkel met kleur</strong> worden aangeduid (groen = beschikbaar, rood = niet beschikbaar) — zonder bijkomende tekst.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Vraag 5</p>
+    <h4>Waarom is dit een probleem voor Jerry, en wat is de oplossing?</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Jerry gebruikt geen e-mail — de oplossing is telefonisch contact</li>
+      <li><strong>B.</strong> Het scherm van Jerry is te klein — de oplossing is inzoomen</li>
+      <li><strong>C.</strong> Jerry kan bepaalde kleuren (o.a. rood/groen) niet onderscheiden, waardoor informatie die enkel via kleur wordt gegeven onbegrijpelijk is — voeg ook tekst of een symbool toe naast de kleur</li>
+      <li><strong>D.</strong> De e-mail mist een alt-tekst — voeg een alt-tekst toe aan de e-mail</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 5</p>
+    <span class="pill good">C is correct</span>
+    <p>Ongeveer 8% van de mannen heeft een vorm van kleurenblindheid. Zij kunnen wél kleuren zien, maar sommige kleuren — vaak rood en groen — niet goed onderscheiden. Wanneer informatie <strong>uitsluitend via kleur</strong> wordt overgebracht, gaat die volledig verloren.</p>
+    <div class="tip">
+      <strong>Oplossing:</strong> gebruik nooit kleur als enige informatiedrager. Voeg tekst, een label, een symbool of een patroon toe naast de kleur — zoals bij het aangepaste UNO-spel, waar elke kleur ook een uniek symbool kreeg.
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VRAAG 6 + ANTWOORD 6  — PERSONA: JIM (motorische handicap)
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <p class="section-label">Vraag 6 — Persona</p>
+    <div class="persona-header">
+      <img src="https://slides.anysurfer.be/reveal/img/jim.png" alt="Jim">
+      <h4>Jim heeft een motorische handicap</h4>
+    </div>
+    <blockquote class="persona-quote">"Ik kan mijn handen niet gebruiken en bedien mijn toetsenbord met een headstick. Uitklapmenu's en tooltips werken vaak niet met het toetsenbord."</blockquote>
+    <p>Jim probeert op een website een <strong>uitklapmenu</strong> te openen, maar dat werkt enkel wanneer je er met de muis over zweeft (hover) — niet met <kbd>TAB</kbd> en <kbd>ENTER</kbd>.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Vraag 6</p>
+    <h4>Wat is hier het probleem, en wat is de oplossing?</h4>
+    <ol class="options">
+      <li><strong>A.</strong> Het menu is enkel bereikbaar met de muis — Jim kan de inhoud niet openen. Alles wat met de muis kan, moet ook met het toetsenbord werken</li>
+      <li><strong>B.</strong> Er is geen probleem zolang het menu een groot lettertype gebruikt</li>
+      <li><strong>C.</strong> Het probleem is een gebrek aan ondertitels bij het menu</li>
+      <li><strong>D.</strong> Het probleem is dat het menu geen alt-tekst heeft</li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="section-label">Antwoord 6</p>
+    <span class="pill good">A is correct</span>
+    <p>Jim navigeert volledig met het toetsenbord: <kbd>TAB</kbd> naar het volgende element, <kbd>Shift</kbd>+<kbd>TAB</kbd> terug, <kbd>ENTER</kbd> om te activeren, <kbd>Spatie</kbd> voor een checkbox, pijltjestoetsen in een lijst. Een menu dat enkel op <em>hover</em> reageert, is voor hem volledig onbereikbaar.</p>
+    <div class="tip">
+      <strong>Vuistregel:</strong> alles wat met de muis kan, moet ook met het toetsenbord werken — inclusief uitklapmenu's, tooltips en de zichtbaarheid van de focus (een duidelijke focusindicator die toont waar je je bevindt).
+    </div>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LEERPUNTEN
+════════════════════════════════════════════ -->
+<section>
+
+  <section>
+    <h3>Leerpunten (1/2)</h3>
+    <ol class="takeaways" style="font-size:.93em;">
+      <li>Toegankelijkheid betekent dat iedereen <strong>zelfstandig, veilig en comfortabel</strong> kan doen wat de bedoeling is — waarneembaar, begrijpelijk en bruikbaar voor iedereen.</li>
+      <li>Het <strong>curb-cut effect</strong>: inclusief ontwerpen voor mensen met een beperking verbetert de ervaring voor iedereen.</li>
+      <li><strong>94% van de Belgische websites</strong> voldoet niet aan minstens één toegankelijkheidseis — er is nog veel werk aan de winkel.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Leerpunten (2/2)</h3>
+    <ol class="takeaways" style="font-size:.93em;" start="4">
+      <li><strong>Nina (ADHD):</strong> geef de gebruiker controle over beweging — pauzeknop, geen autoplay, geen automatisch geluid.</li>
+      <li><strong>Jerry (kleurenblind):</strong> gebruik nooit kleur als enige informatiedrager — voeg tekst of een symbool toe.</li>
+      <li><strong>Jim (motorische handicap):</strong> alles wat met de muis kan, moet ook met het toetsenbord werken.</li>
+    </ol>
+  </section>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VERDERE LECTUUR
+════════════════════════════════════════════ -->
+<section>
+  <h3>Verdere lectuur</h3>
+  <ul style="font-size:.92em;">
+    <li><a href="https://www.anysurfer.be/nl" style="color:#93e0d5;">AnySurfer</a> — advies, audits en opleidingen rond digitale toegankelijkheid</li>
+    <li><a href="https://slides.anysurfer.be/reveal/intro_nl_modulair.html#/" style="color:#93e0d5;">Introductie digitale toegankelijkheid</a> — de volledige presentatie, met alle persona-verhalen</li>
+    <li><a href="https://www.w3.org/TR/WCAG21/" style="color:#93e0d5;">WCAG 2.1 (W3C)</a> — de technische standaard achter de wetgeving</li>
+    <li><a href="https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=CELEX:32019L0882" style="color:#93e0d5;">European Accessibility Act – Richtlijn (EU) 2019/882</a></li>
+    <li><a href="https://accessibility.belgium.be/nl" style="color:#93e0d5;">Belgian Web Accessibility</a> — toezicht en rapportering overheidswebsites (FOD BOSA)</li>
+  </ul>
+  <hr class="divider">
+  <p style="text-align:center; font-size:.85em; color:#a8aab8;">Bedankt!</p>
+</section>
+      </div>
+    </div>
+    <script src="js/reveal.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    highlight: {
+      highlightOnLoad: true
+    }
+  });
+  document.querySelectorAll('pre code').forEach(el => hljs.highlightElement(el));
+</script>
+  </body>
+</html>
